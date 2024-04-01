@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Traditional Bosnian Recipes</title>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'><link rel="stylesheet" href="./login.css">
-
+  
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -13,10 +13,10 @@
     <h1>Login</h1>
     <div class="content">
       <div class="input-field">
-        <input type="email" placeholder="Email" autocomplete="nope">
+        <input type="email" placeholder="Email" autocomplete="nope" name="email">
       </div>
       <div class="input-field">
-        <input type="password" placeholder="Password" autocomplete="new-password">
+        <input type="password" placeholder="Password" autocomplete="new-password" name="password">
       </div>
       <a href="#" class="link">Forgot Your Password?</a>
     </div>
@@ -27,7 +27,8 @@
   </form>
 </div>
 <!-- partial -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
   <script  src="./login.js"></script>
-
 </body>
 </html>

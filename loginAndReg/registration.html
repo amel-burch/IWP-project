@@ -16,19 +16,19 @@
             <h1>Register</h1>
             <div class="content">
                 <div class="input-field">
-                    <input placeholder="First name" autocomplete="nope">
+                    <input placeholder="First name" autocomplete="nope" name="fn">
                 </div>
                 <div class="input-field">
-                    <input placeholder="Last name" autocomplete="nope">
+                    <input placeholder="Last name" autocomplete="nope" name="ln">
                 </div>
                 <div class="input-field">
-                    <input type="email" placeholder="Email" autocomplete="nope">
+                    <input type="email" placeholder="Email" autocomplete="nope" name="email">
                 </div>
                 <div class="input-field">
-                    <input type="password" placeholder="Password" autocomplete="new-password">
+                    <input type="password" placeholder="Password" autocomplete="new-password" name="pw" id="pw">
                 </div>
                 <div class="input-field">
-                    <input type="password" placeholder="Repeat password" autocomplete="new-password">
+                    <input type="password" placeholder="Repeat password" autocomplete="new-password" name="pw_repeat">
                 </div>
             </div>
             <div class="action">
@@ -37,6 +37,8 @@
         </form>
     </div>
     <!-- partial -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <script src="./registration.js"></script>
 
 </body>
