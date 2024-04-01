@@ -1122,6 +1122,7 @@ textarea:focus {
     padding: 35px 0;
     margin-bottom: 0; }
   .follow-us-instagram .insta-feeds {
+    justify-content: center;
     position: relative;
     z-index: 1; }
     .follow-us-instagram .insta-feeds .single-insta-feeds {

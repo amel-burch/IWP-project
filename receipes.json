@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Burek - pie with meat",
+        "rating": 4,
+        "img": "img/bg-img/sr1.jpg",
+        "ingredients": [
+            "Brasno",
+            "Meso",
+            "Ulje"
+        ],
+        "steps": [
+            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum"
+        ],
+        "prepTimeMins": 75,
+        "postedAt": "April 05, 2023",
+        "servings": 10
+    },
+    {
+        "id": 2,
+        "name": "Hadzijski cevap",
+        "rating": 5,
+        "img": "img/bg-img/sr2.jpg",
+        "ingredients": [
+            "Teletina",
+            "Paprike",
+            "Patlidzan"
+        ],
+        "steps": [
+            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum"
+        ],
+        "prepTimeMins": 45,
+        "postedAt": "Maj 05, 2023",
+        "servings": 3
+    },
+    {
+        "id": 3,
+        "name": "Japrak",
+        "rating": 3,
+        "img": "img/bg-img/sr3.jpg",
+        "ingredients": [
+            "Vinova Loza",
+            "Riza",
+            "Meso"
+        ],
+        "steps": [
+            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum",
+            "Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum"
+        ],
+        "prepTimeMins": 25,
+        "postedAt": "April 05, 2024",
+        "servings": 11
+    }
+]

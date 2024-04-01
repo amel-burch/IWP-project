@@ -9,12 +9,11 @@ let form = document.querySelector('form');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  window.location.href = "C:/Users/USER/source/repos/IWP-project/index.html";
+  window.location.href = "http://localhost/IWP-project/index.html";
 });
 
 let register = document.getElementById('register');
 register.addEventListener('click', (e) => {
   e.preventDefault();
-  console.l
-  window.location.href = "C:/Users/USER/source/repos/IWP-project/login and reg/registration.html";
+  window.location.href = "http://localhost/IWP-project/loginAndReg/registration.html";
 });
