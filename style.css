@@ -1,6 +1,6 @@
 /* [Master Stylesheet v1.0]
 
-- Template Name: Delicious - Food Blog Template
+- Template Name: Traditional Bosnian RecipesTemplate
 - Template Author: Colorlib
 - Template URL: colorlib.com
 - Version: 1.0.0
@@ -1122,6 +1122,7 @@ textarea:focus {
     padding: 35px 0;
     margin-bottom: 0; }
   .follow-us-instagram .insta-feeds {
+    justify-content: center;
     position: relative;
     z-index: 1; }
     .follow-us-instagram .insta-feeds .single-insta-feeds {
@@ -1386,5 +1387,7 @@ textarea:focus {
     .ml-10{
       margin-left: 10rem;
     }
-
+.red-butt{
+  
+}
   /*# sourceMappingURL=style.css.map */
