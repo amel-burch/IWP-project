@@ -26,22 +26,17 @@ $('form').validate({
   submitHandler: function (form) {
     // Serialize the form data
     var formData = $(form).find(':input').not('.exclude').serialize();
-    console.log(formData)
     $.ajax({
       url: 'http://localhost:80/IWP-project/backend/register_user.php',
       type: 'POST',
       data: formData,
       success: function(response) {
-        // Handle success response here
-        // For example, you can redirect the user or display a success message
-        console.log('Form submitted successfully',response);
-        // window.location.href = "http://localhost/IWP-project/loginAndReg/login.html";
+        window.location.href = "http://localhost/IWP-project/loginAndReg/login.html";
       },
       error: function() {
         // Handle errors if any
         console.log('Error submitting form data');
       } 
     });
-    return false; // Prevent the default form submission
   }
 });
