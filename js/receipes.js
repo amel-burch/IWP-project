@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     function fetchData() {
         $.ajax({
-            url: "receipes.json",
+            url: `http://localhost:80/IWP-project/backend/get_recipes.php`,
             type: "GET",
             dataType: "json",
             success: function (data) {
@@ -37,7 +37,7 @@ $(document).ready(function () {
         html = data.map((item) => {
             return `<div class="col-12 col-sm-6 col-lg-4">
             <div class="single-best-receipe-area mb-30">
-                <img src="${item.img}" alt="">
+                <img src="${item.picture}" alt="">
                 <div class="receipe-content">
                 <a href="#" id="${item.id}">
                     <h5 id="${item.id}">${item.name}</h5>
