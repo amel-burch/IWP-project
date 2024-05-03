@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     function fetchData() {
         $.ajax({
-            url: "receipes.json",
+            url: `http://localhost:80/IWP-project/backend/recipes/${id}`,
             type: "GET",
             dataType: "json",
             success: function (data) {
@@ -21,16 +21,15 @@ $(document).ready(function () {
     }
 
     function renderData(data) {
-        const selectedRecipe = data.find(x => x.id.toString() === id);
-        
-        renderImage(selectedRecipe.img);
-        renderMealDetails(selectedRecipe);
-        renderRating(selectedRecipe.rating);
-        renderSteps(selectedRecipe.steps);
-        renderIngredients(selectedRecipe.ingredients);
+        renderImage(data.picture);
+        renderMealDetails(data);
+        renderRating(data.rating);
+        renderSteps(data.steps);
+        renderIngredients(data.ingredients);
     }
 
     function renderImage(img) {
+        if(!img) return;
         let html = "<h1>No data</h1>"
         if (img === null) {
             $("#receipe-img-slider").html(html);
@@ -43,16 +42,17 @@ $(document).ready(function () {
     }
 
     function renderMealDetails(recipe) {
+        if(!recipe) return;
         let html = "<h1>No data</h1>"
         if (recipe === null) {
             $("#meal-details").html(html);
             return;
         }
 
-        html = `<span>${recipe.postedAt}</span>
+        html = `<span>${recipe.posted_at}</span>
                 <h2>${recipe.name}</h2>
                 <div class="receipe-duration">
-                    <h6>Prep: ${recipe.prepTimeMins} mins</h6>
+                    <h6>Prep: ${recipe.preparation_time} mins</h6>
                     <h6>Yields: ${recipe.servings} Servings</h6>
                 </div>`;
 
@@ -60,6 +60,7 @@ $(document).ready(function () {
     }
 
     function renderRating(rating) {
+        if(!rating) return;
         let html = "<h1>No data</h1>"
         if (rating === null) {
             $("#rating").html(html);
@@ -75,6 +76,8 @@ $(document).ready(function () {
     }
 
     function renderSteps(steps) {
+        console.log(steps)
+        if(!steps) return;
         let html = "<h1>No data</h1>"
         if (steps === null) {
             $("#steps").html(html);
@@ -83,10 +86,11 @@ $(document).ready(function () {
 
         html = "";
         for (let i = 0; i < steps.length; i++) {
+            console.log(steps[i])
             html += `
             <div class="single-preparation-step d-flex">
-                <h4>0${i + 1}.</h4>
-                <p>${steps[i]}</p>
+                <h4>${steps[i].step_id}.</h4>
+                <p>${steps[i].description}</p>
             </div>`
         }
 
@@ -94,6 +98,7 @@ $(document).ready(function () {
     }
 
     function renderIngredients(ing){
+        if(!ing) return;
         let html = "<h1>No data</h1>"
         if (ing === null) {
             $("#ing").html(html);
@@ -103,8 +108,8 @@ $(document).ready(function () {
         html = "<h4>Ingredients</h4>";
         for (let i = 0; i < ing.length; i++) {
             html += `  <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="${i}">
-                            <label class="custom-control-label" for="${i}">${ing[i]} </label>
+                            <input type="checkbox" class="custom-control-input" id="${ing[i].ingredient_id}">
+                            <label class="custom-control-label" for="${ing[i].ingredient_id}">${ing[i].ingName} </label>
                         </div>`
         }
 

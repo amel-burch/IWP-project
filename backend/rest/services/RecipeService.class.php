@@ -13,9 +13,9 @@ class RecipeService {
         return $this->recipeDao->get_all();
     }
 
-    // public function get_recipe($id){
-    //     return $this->recipeDao->get_by_id($id);
-    // }
+    public function get_by_id($id){
+        return $this->recipeDao->get_by_id($id);
+    }
 
     // public function add_recipe($recipe){
     //     $this->recipeDao->add($recipe);

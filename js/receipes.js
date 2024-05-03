@@ -3,14 +3,15 @@ $(document).ready(function () {
 
     function fetchData() {
         $.ajax({
-            url: `http://localhost:80/IWP-project/backend/get_recipes.php`,
+            url: `http://localhost:80/IWP-project/backend/recipes`,
             type: "GET",
             dataType: "json",
             success: function (data) {
+                console.log(data);
                 renderData(data);
             },
-            error: function () {
-                $("#result").html("Error fetching data.");
+            error: function (err) {
+                console.log('Error name:', err);
             }
         });
     }

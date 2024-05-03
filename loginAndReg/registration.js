@@ -27,7 +27,7 @@ $('form').validate({
     // Serialize the form data
     var formData = $(form).find(':input').not('.exclude').serialize();
     $.ajax({
-      url: 'http://localhost:80/IWP-project/backend/register_user.php',
+      url: 'http://localhost:80/IWP-project/backend/register',
       type: 'POST',
       data: formData,
       success: function(response) {
