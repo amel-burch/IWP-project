@@ -28,7 +28,20 @@ $('form').validate({
     password: "Please enter password"
   },
   submitHandler: function(){
-    window.location.href = "http://localhost/IWP-project/index.html";
+    // Serialize the form data
+    var formData = $(form).find(':input').not('.exclude').serialize();
+    $.ajax({
+      url: 'http://localhost:80/IWP-project/backend/login',
+      type: 'POST',
+      data: formData,
+      success: function(response) {
+        window.location.href = "http://localhost/IWP-project/index.html";
+      },
+      error: function() {
+        // Handle errors if any
+        console.log('Error submitting form data');
+      } 
+    });
   }
 });
 

@@ -18,4 +18,16 @@ class UserDao extends BaseDao{
     public function add($user) {
         return $this->insert('users', $user);
     }
+
+    public function login($email, $password){
+        $query = "SELECT * FROM users WHERE email = :email AND password = :password";
+
+        $res = $this->query($query, ["email" => $email, "password" => $password]);
+
+        if (empty($res)) {
+            throw new Exception("Invalid email or password", 400);
+        } else {
+            return $res[0];
+        }
+    }
 }

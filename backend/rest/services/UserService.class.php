@@ -11,5 +11,9 @@ class UserService {
 
     public function register_user($user) {
         return $this->userDao->add($user);
-  }
+    }
+
+    public function login($user) {
+        return $this->userDao->login($user['email'], $user['password']);
+    }
 }
