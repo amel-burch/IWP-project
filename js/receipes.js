@@ -6,6 +6,14 @@ $(document).ready(function () {
             url: `http://localhost:80/IWP-project/backend/recipes`,
             type: "GET",
             dataType: "json",
+            beforeSend: function (xhr) {
+                if (window.localStorage.getItem("user")) {
+                  xhr.setRequestHeader(
+                    "Authentication",
+                    window.localStorage.getItem("user").token
+                  );
+                }
+              },
             success: function (data) {
                 console.log(data);
                 renderData(data);

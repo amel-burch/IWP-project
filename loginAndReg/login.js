@@ -12,6 +12,10 @@ https://dribbble.com/shots/2292415-Daily-UI-001-Day-001-Sign-Up
 //   window.location.href = "http://localhost/IWP-project/index.html";
 // });
 
+if (window.localStorage.getItem("user")) {
+  window.location.href = "http://localhost/IWP-project/index.html";
+}
+
 $('form').validate({
   rules:{
     email: {
@@ -27,19 +31,20 @@ $('form').validate({
     },
     password: "Please enter password"
   },
-  submitHandler: function(){
+  submitHandler: function(form){
     // Serialize the form data
     var formData = $(form).find(':input').not('.exclude').serialize();
     $.ajax({
-      url: 'http://localhost:80/IWP-project/backend/login',
+      url: 'http://localhost:80/IWP-project/backend/auth/login',
       type: 'POST',
       data: formData,
       success: function(response) {
+        console.log(response);
+        window.localStorage.setItem('user', JSON.stringify(response));
         window.location.href = "http://localhost/IWP-project/index.html";
       },
       error: function() {
-        // Handle errors if any
-        console.log('Error submitting form data');
+        alert('Invalid credentials');
       } 
     });
   }
