@@ -3,11 +3,11 @@
 /**
  * @OA\Info(
  *   title="API",
- *   description="Amela's API for IWP project",
+ *   description="Amels API for IWP project",
  *   version="1.0",
  *   @OA\Contact(
- *     email="becir.isakovic@ibu.edu.ba",
- *     name="Becir Isakovic"
+ *     email="amel.karsic@stu.ibu.edu.ba",
+ *     name="Amel Karsic"
  *   )
  * ),
  * @OA\OpenApi(
