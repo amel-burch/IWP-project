@@ -23,23 +23,3 @@ Flight::route('POST /register', function(){
     $user_service = Flight::get('user_service');
     $user_service->register_user(Flight::request()->data->getData());
 });
-
-/**
- * @OA\Post(
- *      path="/login",
- *      tags={"user"},
- *      summary="Login",
- *      @OA\RequestBody(
- *           required=true,
- *           @OA\JsonContent(ref="#/components/schemas/Login")
- *      ),
- *      @OA\Response(
- *           response=200,
- *           description="User logged in successfully"
- *      )
- * )
- */
-Flight::route('POST /login', function(){
-    $user_service = Flight::get('user_service');
-    $user_service->login(Flight::request()->data->getData());
-});

@@ -1,6 +1,9 @@
 <?php
 
 require 'rest/services/RecipeService.class.php';
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
+
 Flight::set('recipe_service', new RecipeService());
 
 /**
@@ -15,8 +18,16 @@ Flight::set('recipe_service', new RecipeService());
      * )
      */
 Flight::route('GET /recipes', function(){
-    $recipes = Flight::get('recipe_service')->get_all_recipes();
-    Flight::json($recipes);
+    try {
+        $token = Flight::request()->getHeader('Authentication');
+        if($token){
+            $decoded_token = JWT::decode($token, new Key(JWT_SECRET, 'HS256'));
+            $recipes = Flight::get('recipe_service')->get_all_recipes();
+            Flight::json($recipes);
+        }
+    } catch (\Exception $e){
+        Flight::halt(500, $e->getMessage());
+    } 
 });
 
 /**

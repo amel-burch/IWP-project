@@ -13,8 +13,4 @@ class UserService {
         $user['password'] = password_hash($user['password'], PASSWORD_BCRYPT);
         return $this->userDao->add($user);
     }
-
-    public function login($user) {
-        return $this->userDao->login($user['email'], $user['password']);
-    }
 }

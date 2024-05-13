@@ -35,7 +35,7 @@ $('form').validate({
       },
       error: function() {
         // Handle errors if any
-        console.log('Error submitting form data');
+        alert('Error submitting form data');
       } 
     });
   }

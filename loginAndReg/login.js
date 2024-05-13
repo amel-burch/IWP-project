@@ -12,7 +12,7 @@ https://dribbble.com/shots/2292415-Daily-UI-001-Day-001-Sign-Up
 //   window.location.href = "http://localhost/IWP-project/index.html";
 // });
 
-if (window.localStorage.getItem("user")) {
+if (JSON.parse(window.localStorage.getItem("user"))) {
   window.location.href = "http://localhost/IWP-project/index.html";
 }
 
@@ -39,7 +39,6 @@ $('form').validate({
       type: 'POST',
       data: formData,
       success: function(response) {
-        console.log(response);
         window.localStorage.setItem('user', JSON.stringify(response));
         window.location.href = "http://localhost/IWP-project/index.html";
       },

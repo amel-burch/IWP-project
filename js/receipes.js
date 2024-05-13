@@ -7,10 +7,11 @@ $(document).ready(function () {
             type: "GET",
             dataType: "json",
             beforeSend: function (xhr) {
-                if (window.localStorage.getItem("user")) {
+                if (JSON.parse(window.localStorage.getItem("user"))) {
+                    console.log(JSON.parse(window.localStorage.getItem("user")).user.token);
                   xhr.setRequestHeader(
                     "Authentication",
-                    window.localStorage.getItem("user").token
+                    JSON.parse(window.localStorage.getItem("user")).user.token
                   );
                 }
               },
