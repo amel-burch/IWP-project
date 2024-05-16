@@ -1,3 +1,7 @@
+if (!JSON.parse(window.localStorage.getItem("user"))) {
+    window.location.href = "http://localhost/IWP-project/loginAndReg/login.html";
+}
+
 (function ($) {
     'use strict';
 
