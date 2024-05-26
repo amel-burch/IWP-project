@@ -18,6 +18,7 @@ Flight::route('/*', function(){
                 'jwt_decoded' => $decoded_token,
                 'user' => $decoded_token->user
             ]);
+            return TRUE;
         }
     } catch (\Exception $e){
         Flight::halt(500, $e->getMessage());
