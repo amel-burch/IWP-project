@@ -8,19 +8,17 @@ $(document).ready(function () {
             dataType: "json",
             beforeSend: function (xhr) {
                 if (JSON.parse(window.localStorage.getItem("user"))) {
-                    console.log(JSON.parse(window.localStorage.getItem("user")).user.token);
-                  xhr.setRequestHeader(
-                    "Authentication",
-                    JSON.parse(window.localStorage.getItem("user")).user.token
-                  );
+                    xhr.setRequestHeader(
+                        "Authentication",
+                        JSON.parse(window.localStorage.getItem("user")).user.token
+                    );
                 }
-              },
+            },
             success: function (data) {
-                console.log(data);
                 renderData(data);
             },
             error: function (err) {
-                console.log('Error name:', err);
+                console.error('Error name:', err);
             }
         });
     }
@@ -33,8 +31,7 @@ $(document).ready(function () {
 
     $('#receipes').on('click', 'a', (event) => {
         navigateToPage(event, event.target.id);
-    }); 
-    
+    });
 
     function renderData(data) {
         let html = "<h1> No data</h1>"

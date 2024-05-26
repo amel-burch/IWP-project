@@ -11,6 +11,14 @@ $(document).ready(function () {
             url: `http://localhost:80/IWP-project/backend/recipes/${id}`,
             type: "GET",
             dataType: "json",
+            beforeSend: function (xhr) {
+                if (JSON.parse(window.localStorage.getItem("user"))) {
+                    xhr.setRequestHeader(
+                        "Authentication",
+                        JSON.parse(window.localStorage.getItem("user")).user.token
+                    );
+                }
+            },
             success: function (data) {
                 renderData(data);
             },
@@ -29,7 +37,7 @@ $(document).ready(function () {
     }
 
     function renderImage(img) {
-        if(!img) return;
+        if (!img) return;
         let html = "<h1>No data</h1>"
         if (img === null) {
             $("#receipe-img-slider").html(html);
@@ -42,7 +50,7 @@ $(document).ready(function () {
     }
 
     function renderMealDetails(recipe) {
-        if(!recipe) return;
+        if (!recipe) return;
         let html = "<h1>No data</h1>"
         if (recipe === null) {
             $("#meal-details").html(html);
@@ -60,7 +68,7 @@ $(document).ready(function () {
     }
 
     function renderRating(rating) {
-        if(!rating) return;
+        if (!rating) return;
         let html = "<h1>No data</h1>"
         if (rating === null) {
             $("#rating").html(html);
@@ -76,8 +84,7 @@ $(document).ready(function () {
     }
 
     function renderSteps(steps) {
-        console.log(steps)
-        if(!steps) return;
+        if (!steps) return;
         let html = "<h1>No data</h1>"
         if (steps === null) {
             $("#steps").html(html);
@@ -86,7 +93,6 @@ $(document).ready(function () {
 
         html = "";
         for (let i = 0; i < steps.length; i++) {
-            console.log(steps[i])
             html += `
             <div class="single-preparation-step d-flex">
                 <h4>${steps[i].step_id}.</h4>
@@ -97,8 +103,8 @@ $(document).ready(function () {
         $("#steps").html(html);
     }
 
-    function renderIngredients(ing){
-        if(!ing) return;
+    function renderIngredients(ing) {
+        if (!ing) return;
         let html = "<h1>No data</h1>"
         if (ing === null) {
             $("#ing").html(html);
