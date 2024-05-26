@@ -9,18 +9,22 @@ Flight::route('/*', function(){
     }
 
     try {
-        $token = Flight::request()->getHeader('Authentication');
-        if($token){
-            $decoded_token = JWT::decode($token, new Key(JWT_SECRET, 'HS256'));
-            Flight::set('user', $decoded_token->user);
-            Flight::set('jwt_toke', $token);
-            Flight::json([
-                'jwt_decoded' => $decoded_token,
-                'user' => $decoded_token->user
-            ]);
-            return TRUE;
-        }
-    } catch (\Exception $e){
-        Flight::halt(500, $e->getMessage());
+        $token = Flight::request()->getHeader("Authentication");
+        if(!$token)
+            Flight::halt(401, "Unauthorized access. This will be reported to administrator!");
+
+        $decoded_token = JWT::decode($token, new Key(JWT_SECRET, 'HS256'));
+        Flight::set('user', $decoded_token->user);
+        Flight::set('jwt_token', $token);
+        return TRUE;
+    } catch (\Exception $e) {
+        Flight::halt(401, $e->getMessage());
     }
+});
+
+Flight::map('error', function($e) {
+    file_put_contents('logs.txt', $e.PHP_EOL , FILE_APPEND | LOCK_EX);
+
+    Flight::halt($e->getCode(), $e->getMessage());
+    Flight::stop($e->getCode());
 });
